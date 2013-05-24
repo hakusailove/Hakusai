@@ -1,0 +1,17 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Debug" />
+  <Config name="Debug" binpathtype="Auto">
+    <assembly path="CsvParserTest\bin\Debug\CsvParserTest.dll" />
+    <assembly path="TailFollowStreamTest\bin\Debug\TailFollowStreamTest.dll" />
+    <assembly path="Pso2LogWatcherTest\bin\Debug\Pso2LogWatcherTest.dll" />
+    <assembly path="LivetubeClientTest\bin\Debug\LivetubeClientTest.dll" />
+    <assembly path="Pso2LogSenderTest\bin\Debug\Pso2LogSenderTest.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto">
+    <assembly path="CsvParserTest\bin\Release\CsvParserTest.dll" />
+    <assembly path="TailFollowStreamTest\bin\Release\TailFollowStreamTest.dll" />
+    <assembly path="Pso2LogWatcherTest\bin\Release\Pso2LogWatcherTest.dll" />
+    <assembly path="LivetubeClientTest\bin\Release\LivetubeClientTest.dll" />
+    <assembly path="Pso2LogSenderTest\bin\Release\Pso2LogSenderTest.dll" />
+  </Config>
+</NUnitProject>
