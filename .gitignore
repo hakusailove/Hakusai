@@ -153,5 +153,6 @@ $RECYCLE.BIN/
 
 # for external libraries
 /extlib/*
+!/extlib/readme.txt
 /Help
 *.shfbproj_*
