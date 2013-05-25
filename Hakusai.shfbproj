@@ -27,17 +27,20 @@
     <CppCommentsFixup>False</CppCommentsFixup>
     <CleanIntermediates>True</CleanIntermediates>
     <DocumentationSources>
-      <DocumentationSource sourceFile="CsvParser\bin\Debug\CsvParser.dll" />
-      <DocumentationSource sourceFile="CsvParser\bin\Debug\CsvParser.XML" />
-      <DocumentationSource sourceFile="LivetubeClient\bin\Debug\LivetubeClient.dll" />
-      <DocumentationSource sourceFile="LivetubeClient\bin\Debug\LivetubeClient.XML" />
-      <DocumentationSource sourceFile="Pso2LogSender\bin\Debug\Pso2LogSender.exe" />
-      <DocumentationSource sourceFile="Pso2LogSender\bin\Debug\Pso2LogSender.XML" />
-      <DocumentationSource sourceFile="Pso2LogWatcher\bin\Debug\Pso2LogWatcher.dll" />
-      <DocumentationSource sourceFile="Pso2LogWatcher\bin\Debug\Pso2LogWatcher.XML" />
-      <DocumentationSource sourceFile="TailFollowStream\bin\Debug\TailFollowStream.dll" />
-      <DocumentationSource sourceFile="TailFollowStream\bin\Debug\TailFollowStream.XML" />
-    </DocumentationSources>
+      <DocumentationSource sourceFile="CavetubeCommentReaderSample\bin\Debug\CavetubeCommentReaderSample.exe" />
+<DocumentationSource sourceFile="CavetubeCommentReaderSample\bin\Debug\CavetubeCommentReaderSample.XML" />
+<DocumentationSource sourceFile="CsvParser\bin\Debug\CsvParser.dll" />
+<DocumentationSource sourceFile="CsvParser\bin\Debug\CsvParser.XML" />
+<DocumentationSource sourceFile="LivetubeClient\bin\Debug\LivetubeClient.dll" />
+<DocumentationSource sourceFile="LivetubeClient\bin\Debug\LivetubeClient.XML" />
+<DocumentationSource sourceFile="LivetubeCommentReaderSample\bin\Debug\LivetubeCommentReaderSample.exe" />
+<DocumentationSource sourceFile="LivetubeCommentReaderSample\bin\Debug\LivetubeCommentReaderSample.XML" />
+<DocumentationSource sourceFile="Pso2LogSender\bin\Debug\Pso2LogSender.exe" />
+<DocumentationSource sourceFile="Pso2LogSender\bin\Debug\Pso2LogSender.XML" />
+<DocumentationSource sourceFile="Pso2LogWatcher\bin\Debug\Pso2LogWatcher.dll" />
+<DocumentationSource sourceFile="Pso2LogWatcher\bin\Debug\Pso2LogWatcher.XML" />
+<DocumentationSource sourceFile="TailFollowStream\bin\Debug\TailFollowStream.dll" />
+<DocumentationSource sourceFile="TailFollowStream\bin\Debug\TailFollowStream.XML" /></DocumentationSources>
     <SyntaxFilters>Standard</SyntaxFilters>
     <SdkLinkTarget>Blank</SdkLinkTarget>
     <RootNamespaceContainer>False</RootNamespaceContainer>

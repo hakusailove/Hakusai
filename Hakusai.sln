@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivetubeClientTest", "Livet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pso2LogSenderTest", "Pso2LogSenderTest\Pso2LogSenderTest.csproj", "{1B91FE8D-5F6F-479F-AA60-9CC63D7D7D6F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CavetubeCommentReaderSample", "CavetubeCommentReaderSample\CavetubeCommentReaderSample.csproj", "{E3700BEB-2B90-4462-8763-73DB76F12266}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivetubeCommentReaderSample", "LivetubeCommentReaderSample\LivetubeCommentReaderSample.csproj", "{5068D5B8-46E0-4AD3-A4B3-7297A408FEB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -134,6 +138,26 @@ Global
 		{1B91FE8D-5F6F-479F-AA60-9CC63D7D7D6F}.ReleaseILMerge|Any CPU.Build.0 = Release|Any CPU
 		{1B91FE8D-5F6F-479F-AA60-9CC63D7D7D6F}.Test|Any CPU.ActiveCfg = Release|Any CPU
 		{1B91FE8D-5F6F-479F-AA60-9CC63D7D7D6F}.Test|Any CPU.Build.0 = Release|Any CPU
+		{E3700BEB-2B90-4462-8763-73DB76F12266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3700BEB-2B90-4462-8763-73DB76F12266}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3700BEB-2B90-4462-8763-73DB76F12266}.DebugILMerge|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3700BEB-2B90-4462-8763-73DB76F12266}.DebugILMerge|Any CPU.Build.0 = Debug|Any CPU
+		{E3700BEB-2B90-4462-8763-73DB76F12266}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3700BEB-2B90-4462-8763-73DB76F12266}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3700BEB-2B90-4462-8763-73DB76F12266}.ReleaseILMerge|Any CPU.ActiveCfg = Release|Any CPU
+		{E3700BEB-2B90-4462-8763-73DB76F12266}.ReleaseILMerge|Any CPU.Build.0 = Release|Any CPU
+		{E3700BEB-2B90-4462-8763-73DB76F12266}.Test|Any CPU.ActiveCfg = Release|Any CPU
+		{E3700BEB-2B90-4462-8763-73DB76F12266}.Test|Any CPU.Build.0 = Release|Any CPU
+		{5068D5B8-46E0-4AD3-A4B3-7297A408FEB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5068D5B8-46E0-4AD3-A4B3-7297A408FEB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5068D5B8-46E0-4AD3-A4B3-7297A408FEB6}.DebugILMerge|Any CPU.ActiveCfg = Debug|Any CPU
+		{5068D5B8-46E0-4AD3-A4B3-7297A408FEB6}.DebugILMerge|Any CPU.Build.0 = Debug|Any CPU
+		{5068D5B8-46E0-4AD3-A4B3-7297A408FEB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5068D5B8-46E0-4AD3-A4B3-7297A408FEB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5068D5B8-46E0-4AD3-A4B3-7297A408FEB6}.ReleaseILMerge|Any CPU.ActiveCfg = Release|Any CPU
+		{5068D5B8-46E0-4AD3-A4B3-7297A408FEB6}.ReleaseILMerge|Any CPU.Build.0 = Release|Any CPU
+		{5068D5B8-46E0-4AD3-A4B3-7297A408FEB6}.Test|Any CPU.ActiveCfg = Release|Any CPU
+		{5068D5B8-46E0-4AD3-A4B3-7297A408FEB6}.Test|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

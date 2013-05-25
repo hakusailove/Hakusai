@@ -1,6 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CavetubeCommentReaderSample_mono", "CavetubeCommentReaderSample\CavetubeCommentReaderSample_mono.csproj", "{E3700BEB-2B90-4462-8763-73DB76F12266}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivetubeCommentReaderSample_mono", "LivetubeCommentReaderSample\LivetubeCommentReaderSample_mono.csproj", "{5068D5B8-46E0-4AD3-A4B3-7297A408FEB6}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pso2LogSender_mono", "Pso2LogSender\Pso2LogSender_mono.csproj", "{129657AB-D27E-4CED-BFF2-5BA2267455BF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivetubeClient_mono", "LivetubeClient\LivetubeClient_mono.csproj", "{425D2101-6865-47C0-99FD-64001EABA4DC}"
@@ -39,6 +43,10 @@ Global
 		{425D2101-6865-47C0-99FD-64001EABA4DC}.Debug|x86.Build.0 = Debug|Any CPU
 		{425D2101-6865-47C0-99FD-64001EABA4DC}.Release|x86.ActiveCfg = Release|Any CPU
 		{425D2101-6865-47C0-99FD-64001EABA4DC}.Release|x86.Build.0 = Release|Any CPU
+		{5068D5B8-46E0-4AD3-A4B3-7297A408FEB6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5068D5B8-46E0-4AD3-A4B3-7297A408FEB6}.Debug|x86.Build.0 = Debug|Any CPU
+		{5068D5B8-46E0-4AD3-A4B3-7297A408FEB6}.Release|x86.ActiveCfg = Release|Any CPU
+		{5068D5B8-46E0-4AD3-A4B3-7297A408FEB6}.Release|x86.Build.0 = Release|Any CPU
 		{5800BE80-D8ED-4D71-BD96-BF7EB013652A}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{5800BE80-D8ED-4D71-BD96-BF7EB013652A}.Debug|x86.Build.0 = Debug|Any CPU
 		{5800BE80-D8ED-4D71-BD96-BF7EB013652A}.Release|x86.ActiveCfg = Release|Any CPU
@@ -63,6 +71,10 @@ Global
 		{D55DF342-4365-40D1-AAFD-CC705E87BED5}.Debug|x86.Build.0 = Debug|Any CPU
 		{D55DF342-4365-40D1-AAFD-CC705E87BED5}.Release|x86.ActiveCfg = Release|Any CPU
 		{D55DF342-4365-40D1-AAFD-CC705E87BED5}.Release|x86.Build.0 = Release|Any CPU
+		{E3700BEB-2B90-4462-8763-73DB76F12266}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E3700BEB-2B90-4462-8763-73DB76F12266}.Debug|x86.Build.0 = Debug|Any CPU
+		{E3700BEB-2B90-4462-8763-73DB76F12266}.Release|x86.ActiveCfg = Release|Any CPU
+		{E3700BEB-2B90-4462-8763-73DB76F12266}.Release|x86.Build.0 = Release|Any CPU
 		{F002DFF6-523F-4D4E-9EC2-AF6060A9B011}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{F002DFF6-523F-4D4E-9EC2-AF6060A9B011}.Debug|x86.Build.0 = Debug|Any CPU
 		{F002DFF6-523F-4D4E-9EC2-AF6060A9B011}.Release|x86.ActiveCfg = Release|Any CPU
