@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pso2LogSender_mono", "Pso2LogSender\Pso2LogSender_mono.csproj", "{129657AB-D27E-4CED-BFF2-5BA2267455BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivetubeClient_mono", "LivetubeClient\LivetubeClient_mono.csproj", "{425D2101-6865-47C0-99FD-64001EABA4DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pso2LogWatcher_mono", "Pso2LogWatcher\Pso2LogWatcher_mono.csproj", "{CCA19178-CAD8-49A8-918D-21525D41FFBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvParser_mono", "CsvParser\CsvParser_mono.csproj", "{5800BE80-D8ED-4D71-BD96-BF7EB013652A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TailFollowStream_mono", "TailFollowStream\TailFollowStream_mono.csproj", "{D55DF342-4365-40D1-AAFD-CC705E87BED5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{129657AB-D27E-4CED-BFF2-5BA2267455BF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{129657AB-D27E-4CED-BFF2-5BA2267455BF}.Debug|x86.Build.0 = Debug|Any CPU
+		{129657AB-D27E-4CED-BFF2-5BA2267455BF}.Release|x86.ActiveCfg = Release|Any CPU
+		{129657AB-D27E-4CED-BFF2-5BA2267455BF}.Release|x86.Build.0 = Release|Any CPU
+		{425D2101-6865-47C0-99FD-64001EABA4DC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{425D2101-6865-47C0-99FD-64001EABA4DC}.Debug|x86.Build.0 = Debug|Any CPU
+		{425D2101-6865-47C0-99FD-64001EABA4DC}.Release|x86.ActiveCfg = Release|Any CPU
+		{425D2101-6865-47C0-99FD-64001EABA4DC}.Release|x86.Build.0 = Release|Any CPU
+		{5800BE80-D8ED-4D71-BD96-BF7EB013652A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5800BE80-D8ED-4D71-BD96-BF7EB013652A}.Debug|x86.Build.0 = Debug|Any CPU
+		{5800BE80-D8ED-4D71-BD96-BF7EB013652A}.Release|x86.ActiveCfg = Release|Any CPU
+		{5800BE80-D8ED-4D71-BD96-BF7EB013652A}.Release|x86.Build.0 = Release|Any CPU
+		{CCA19178-CAD8-49A8-918D-21525D41FFBA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CCA19178-CAD8-49A8-918D-21525D41FFBA}.Debug|x86.Build.0 = Debug|Any CPU
+		{CCA19178-CAD8-49A8-918D-21525D41FFBA}.Release|x86.ActiveCfg = Release|Any CPU
+		{CCA19178-CAD8-49A8-918D-21525D41FFBA}.Release|x86.Build.0 = Release|Any CPU
+		{D55DF342-4365-40D1-AAFD-CC705E87BED5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D55DF342-4365-40D1-AAFD-CC705E87BED5}.Debug|x86.Build.0 = Debug|Any CPU
+		{D55DF342-4365-40D1-AAFD-CC705E87BED5}.Release|x86.ActiveCfg = Release|Any CPU
+		{D55DF342-4365-40D1-AAFD-CC705E87BED5}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Pso2LogSender\Pso2LogSender_mono.csproj
+	EndGlobalSection
+EndGlobal
