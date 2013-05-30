@@ -157,3 +157,7 @@ $RECYCLE.BIN/
 !/extlib/readme.txt
 /Help
 *.shfbproj_*
+
+# for mono
+*.userprefs
+
