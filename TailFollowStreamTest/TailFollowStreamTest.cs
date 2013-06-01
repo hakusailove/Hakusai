@@ -111,7 +111,8 @@ namespace Hakusai.IO.Test
                     {
                         tail.Read(null, 0, 0);
                     });
-                    Assert.AreEqual("破棄されたオブジェクトにアクセスできません。\r\nオブジェクト名 'Hakusai.IO.TailFollowStream' です。", ex.Message);
+					//メッセージは環境依存だったのでチェックしない
+                    //Assert.AreEqual("破棄されたオブジェクトにアクセスできません。\r\nオブジェクト名 'Hakusai.IO.TailFollowStream' です。", ex.Message);
                 }
             }
         }
