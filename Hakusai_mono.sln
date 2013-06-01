@@ -11,12 +11,26 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvParser_mono", "CsvParser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TailFollowStream_mono", "TailFollowStream\TailFollowStream_mono.csproj", "{D55DF342-4365-40D1-AAFD-CC705E87BED5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TailFollowStreamTest_mono", "TailFollowStreamTest\TailFollowStreamTest_mono.csproj", "{5BA9B379-9F1A-4186-AEF5-349D5A1295C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvParserTest_mono", "CsvParserTest\CsvParserTest_mono.csproj", "{0694F045-B299-4993-BF01-A69A25F34EF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pso2LogWatcherTest_mono", "Pso2LogWatcherTest\Pso2LogWatcherTest_mono.csproj", "{F002DFF6-523F-4D4E-9EC2-AF6060A9B011}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivetubeClientTest_mono", "LivetubeClientTest\LivetubeClientTest_mono.csproj", "{CA862BCD-0355-4446-82D1-05299AAF6833}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pso2LogSenderTest_mono", "Pso2LogSenderTest\Pso2LogSenderTest_mono.csproj", "{C1781A64-1B38-44E7-94DE-33E8E06EF2F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0694F045-B299-4993-BF01-A69A25F34EF5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0694F045-B299-4993-BF01-A69A25F34EF5}.Debug|x86.Build.0 = Debug|Any CPU
+		{0694F045-B299-4993-BF01-A69A25F34EF5}.Release|x86.ActiveCfg = Release|Any CPU
+		{0694F045-B299-4993-BF01-A69A25F34EF5}.Release|x86.Build.0 = Release|Any CPU
 		{129657AB-D27E-4CED-BFF2-5BA2267455BF}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{129657AB-D27E-4CED-BFF2-5BA2267455BF}.Debug|x86.Build.0 = Debug|Any CPU
 		{129657AB-D27E-4CED-BFF2-5BA2267455BF}.Release|x86.ActiveCfg = Release|Any CPU
@@ -29,6 +43,18 @@ Global
 		{5800BE80-D8ED-4D71-BD96-BF7EB013652A}.Debug|x86.Build.0 = Debug|Any CPU
 		{5800BE80-D8ED-4D71-BD96-BF7EB013652A}.Release|x86.ActiveCfg = Release|Any CPU
 		{5800BE80-D8ED-4D71-BD96-BF7EB013652A}.Release|x86.Build.0 = Release|Any CPU
+		{5BA9B379-9F1A-4186-AEF5-349D5A1295C9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5BA9B379-9F1A-4186-AEF5-349D5A1295C9}.Debug|x86.Build.0 = Debug|Any CPU
+		{5BA9B379-9F1A-4186-AEF5-349D5A1295C9}.Release|x86.ActiveCfg = Release|Any CPU
+		{5BA9B379-9F1A-4186-AEF5-349D5A1295C9}.Release|x86.Build.0 = Release|Any CPU
+		{C1781A64-1B38-44E7-94DE-33E8E06EF2F5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C1781A64-1B38-44E7-94DE-33E8E06EF2F5}.Debug|x86.Build.0 = Debug|Any CPU
+		{C1781A64-1B38-44E7-94DE-33E8E06EF2F5}.Release|x86.ActiveCfg = Release|Any CPU
+		{C1781A64-1B38-44E7-94DE-33E8E06EF2F5}.Release|x86.Build.0 = Release|Any CPU
+		{CA862BCD-0355-4446-82D1-05299AAF6833}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CA862BCD-0355-4446-82D1-05299AAF6833}.Debug|x86.Build.0 = Debug|Any CPU
+		{CA862BCD-0355-4446-82D1-05299AAF6833}.Release|x86.ActiveCfg = Release|Any CPU
+		{CA862BCD-0355-4446-82D1-05299AAF6833}.Release|x86.Build.0 = Release|Any CPU
 		{CCA19178-CAD8-49A8-918D-21525D41FFBA}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{CCA19178-CAD8-49A8-918D-21525D41FFBA}.Debug|x86.Build.0 = Debug|Any CPU
 		{CCA19178-CAD8-49A8-918D-21525D41FFBA}.Release|x86.ActiveCfg = Release|Any CPU
@@ -37,8 +63,12 @@ Global
 		{D55DF342-4365-40D1-AAFD-CC705E87BED5}.Debug|x86.Build.0 = Debug|Any CPU
 		{D55DF342-4365-40D1-AAFD-CC705E87BED5}.Release|x86.ActiveCfg = Release|Any CPU
 		{D55DF342-4365-40D1-AAFD-CC705E87BED5}.Release|x86.Build.0 = Release|Any CPU
+		{F002DFF6-523F-4D4E-9EC2-AF6060A9B011}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F002DFF6-523F-4D4E-9EC2-AF6060A9B011}.Debug|x86.Build.0 = Debug|Any CPU
+		{F002DFF6-523F-4D4E-9EC2-AF6060A9B011}.Release|x86.ActiveCfg = Release|Any CPU
+		{F002DFF6-523F-4D4E-9EC2-AF6060A9B011}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Pso2LogSender\Pso2LogSender_mono.csproj
+		StartupItem = TailFollowStreamTest\TailFollowStreamTest_mono.csproj
 	EndGlobalSection
 EndGlobal

@@ -161,3 +161,6 @@ $RECYCLE.BIN/
 # for mono
 *.userprefs
 
+# for nunit + monodevelop
+test-results/
+

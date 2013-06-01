@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C1781A64-1B38-44E7-94DE-33E8E06EF2F5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Hakusai.Pso2LogSender.Test</RootNamespace>
+    <AssemblyName>Pso2LogSenderTest</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.core, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+      <Package>mono-nunit</Package>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+      <Package>mono-nunit</Package>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\extlib\Moq.4.0.10827\NET40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="CaveTube.CaveTubeClient">
+      <HintPath>..\extlib\CaveTalk_Net40_20130307_1\CaveTube.CaveTubeClient.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="Pso2LogSenderTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pso2LogSender\Pso2LogSender_mono.csproj">
+      <Project>{129657AB-D27E-4CED-BFF2-5BA2267455BF}</Project>
+      <Name>Pso2LogSender_mono</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pso2LogWatcher\Pso2LogWatcher_mono.csproj">
+      <Project>{CCA19178-CAD8-49A8-918D-21525D41FFBA}</Project>
+      <Name>Pso2LogWatcher_mono</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LivetubeClient\LivetubeClient_mono.csproj">
+      <Project>{425D2101-6865-47C0-99FD-64001EABA4DC}</Project>
+      <Name>LivetubeClient_mono</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
