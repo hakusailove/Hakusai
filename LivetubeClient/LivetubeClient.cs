@@ -256,7 +256,7 @@ namespace Hakusai.Livetube
                 }
                 buf.Append(key);
                 buf.Append("=");
-                buf.Append(WebUtility.UrlEncode(keyValues[key]));
+                buf.Append(Uri.EscapeDataString(keyValues[key]));
             }
             return buf.ToString();
         }

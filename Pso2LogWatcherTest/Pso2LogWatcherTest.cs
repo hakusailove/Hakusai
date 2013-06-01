@@ -292,6 +292,8 @@ namespace Hakusai.Pso2.Test
 
                         watcher.Start(dir);
 
+                        Thread.Sleep(1000); // これを入れないと読み込みの終端シークより前に書き込みが終わってしまう
+
                         log.WriteLine("2013-05-17T20:07:49\t10\tPUBLIC\t12133621\t白 菜2\tテスト2");
                         log.Flush();
                     }
@@ -393,6 +395,8 @@ namespace Hakusai.Pso2.Test
                         log.Flush();
 
                         watcher.Start(dir);
+
+                        Thread.Sleep(1000); // これを入れないと読み込みの終端シークより前に書き込みが終わってしまう
 
                         log.WriteLine("2013-05-17T20:07:49\t10\tPUBLIC\t12133621\t白 菜2\tテスト2");
                         log.Flush();

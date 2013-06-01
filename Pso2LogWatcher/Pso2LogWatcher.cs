@@ -250,122 +250,132 @@ namespace Hakusai.Pso2
             PrintContent(e.FullPath);
         }
 
-        private async Task<int> _PrintContent(StreamReader sin)
+        private Task<int> _PrintContent(StreamReader sin)
         {
-            int result = 1;
-            await Task.Run(() =>
+            return Task<int>.Factory.StartNew(() =>
             {
-                try
+                int result = 1;
+                Task t = Task.Factory.StartNew(() =>
                 {
-                    _logger.Debug("CSVパース開始");
-                    CsvParser.Parse(
-                        sin,
-                        (string[] columns) =>
-                        {
-                            if (columns.Length == 6)
+                    try
+                    {
+                        _logger.Debug("CSVパース開始");
+                        CsvParser.Parse(
+                            sin,
+                            (string[] columns) =>
                             {
-                                Pso2LogEventArgs args = new Pso2LogEventArgs();
-                                args.Time = columns[0];
-                                args.MessageID = columns[1];
-                                args.SendTo = columns[2];
-                                args.FromID = columns[3];
-                                args.From = columns[4];
-                                args.Message = columns[5];
+                                if (columns.Length == 6)
+                                {
+                                    Pso2LogEventArgs args = new Pso2LogEventArgs();
+                                    args.Time = columns[0];
+                                    args.MessageID = columns[1];
+                                    args.SendTo = columns[2];
+                                    args.FromID = columns[3];
+                                    args.From = columns[4];
+                                    args.Message = columns[5];
 
-                                OnPso2LogEvent(args);
-                            }
-                        },
-                        '\t');
-                    _logger.Debug("CSVパース完了");
-                    result = 0;
-                }
-                catch (ObjectDisposedException ex)
-                {
-                    // これが出てしまうのは仕方ないモデル
-                    _logger.Debug(ex);
-                }
-                catch (IOException ex)
-                {
-                    _logger.Error(ex);
-                }
+                                    _logger.Debug("{0}: {1}", args.From, args.Message);
+
+                                    OnPso2LogEvent(args);
+                                }
+                            },
+                            '\t');
+                        _logger.Debug("CSVパース完了");
+                        result = 0;
+                    }
+                    catch (ObjectDisposedException ex)
+                    {
+                        // これが出てしまうのは仕方ないモデル
+                        _logger.Debug(ex);
+                    }
+                    catch (IOException ex)
+                    {
+                        _logger.Error(ex);
+                    }
+                });
+                t.Wait();
+                return result;
             });
-            return result;
         }
 
-        private async void PrintContent(string path, bool onlyAppend = false)
+        private Task PrintContent(string path, bool onlyAppend = false)
         {
-            _logger.Info("ファイル{0}の内容監視要求を受け付けました。", path);
-            Task<int> haveToWait = null;
-            bool samepath = false;
-            lock (_current)
+            return Task.Factory.StartNew(() =>
             {
-                if (_current[0] != null)
+                _logger.Info("ファイル{0}の内容監視要求を受け付けました。", path);
+                Task<int> haveToWait = null;
+                bool samepath = false;
+                lock (_current)
                 {
-                    if (!_current[0].IsCompleted)
+                    if (_current[0] != null)
                     {
-                        _logger.Debug("既存の処理が実行中です。");
-                        if (path != _tailpath)
+                        if (!_current[0].IsCompleted)
                         {
-                            _logger.Debug("対象が違うので既存の処理に停止を要求しました。");
-                            _stream.Close();
+                            _logger.Debug("既存の処理が実行中です。");
+                            if (path != _tailpath)
+                            {
+                                _logger.Debug("対象が違うので既存の処理に停止を要求しました。");
+                                _stream.Close();
+                            }
+                            else
+                            {
+                                _logger.Debug("対象は同じようです。 => N/A");
+                                samepath = true;
+                            }
+                        }
+                        haveToWait = _current[0];
+                    }
+                }
+                if (haveToWait != null)
+                {
+                    _logger.Debug("既存処理の終了を待ちます。");
+                    haveToWait.Wait();
+                    int result = haveToWait.Result;
+                    _logger.Debug("既存処理の終了を確認しました。");
+                    if (samepath)
+                    {
+                        if (result == 0)
+                        {
+                            _logger.Debug("既存処理は正常終了のようです。新しい要求は破棄します。");
+                            return;
                         }
                         else
                         {
-                            _logger.Debug("対象は同じようです。 => N/A");
-                            samepath = true;
+                            _logger.Debug("既存処理は異常終了のようです。");
                         }
                     }
-                    haveToWait = _current[0];
                 }
-            }
-            if (haveToWait != null)
-            {
-                _logger.Debug("既存処理の終了を待ちます。");
-                int result = await haveToWait;
-                _logger.Debug("既存処理の終了を確認しました。");
-                if (samepath)
-                {
-                    if (result == 0)
-                    {
-                        _logger.Debug("既存処理は正常終了のようです。新しい要求は破棄します。");
-                        return;
-                    }
-                    else
-                    {
-                        _logger.Debug("既存処理は異常終了のようです。");
-                    }
-                }
-            }
 
-            StreamReader sin = null;
-            try
-            {
-                lock (_current)
+                StreamReader sin = null;
+                try
                 {
-                    _logger.Debug("対象ファイルパスの処理を開始する。");
-                    _tailpath = path;
-                    Stream ifs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Delete | FileShare.ReadWrite);
-                    _stream = new TailFollowStream(ifs, onlyAppend);
-                    sin = new StreamReader(_stream, Encoding.Unicode);
-                    _current[0] = _PrintContent(sin);
+                    lock (_current)
+                    {
+                        _logger.Debug("対象ファイルパスの処理を開始する。");
+                        _tailpath = path;
+                        Stream ifs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Delete | FileShare.ReadWrite);
+                        _stream = new TailFollowStream(ifs, onlyAppend);
+                        sin = new StreamReader(_stream, Encoding.Unicode);
+                        _current[0] = _PrintContent(sin);
+                    }
+                    _current[0].Wait();
                 }
-                await _current[0];
-            }
-            catch (FileNotFoundException ex)
-            {
-                _logger.Error(ex);
-            }
-            finally
-            {
-                lock (_current)
+                catch (FileNotFoundException ex)
                 {
-                    _logger.Debug("対象ファイルパスの処理が完了しました。");
-                    if (sin != null)
-                        sin.Dispose();
-                    _tailpath = null;
-                    _current[0] = null;
+                    _logger.Error(ex);
                 }
-            }
+                finally
+                {
+                    lock (_current)
+                    {
+                        _logger.Debug("対象ファイルパスの処理が完了しました。");
+                        if (sin != null)
+                            sin.Dispose();
+                        _tailpath = null;
+                        _current[0] = null;
+                    }
+                }
+            });
         }
 
         /// <summary>

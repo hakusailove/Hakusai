@@ -40,7 +40,7 @@ namespace Hakusai.IO.Test
                     using (TailFollowStream tail = new TailFollowStream(ifs, true))
                     using (TextReader reader = new StreamReader(tail))
                     {
-                        var job = Task<bool>.Run(() =>
+                        var job = Task<bool>.Factory.StartNew(() =>
                         {
                             Assert.AreEqual("さようなら", reader.ReadLine());
                             return true;
@@ -131,7 +131,7 @@ namespace Hakusai.IO.Test
                     using (TailFollowStream tail = new TailFollowStream(ifs))
                     using (TextReader reader = new StreamReader(tail))
                     {
-                        var job = Task<bool>.Run(() =>
+                        var job = Task<bool>.Factory.StartNew(() =>
                         {
                             Assert.AreEqual("こんにちは", reader.ReadLine());
                             Assert.AreEqual("さようなら", reader.ReadLine());
@@ -197,7 +197,7 @@ namespace Hakusai.IO.Test
                     using (TailFollowStream tail = new TailFollowStream(ifs))
                     using (TextReader reader = new StreamReader(tail))
                     {
-                        var job = Task<bool>.Run(() =>
+                        var job = Task<bool>.Factory.StartNew(() =>
                         {
                             Assert.AreEqual("こんにちは", reader.ReadLine());
                             Assert.AreEqual("さようなら", reader.ReadLine());
