@@ -1,0 +1,111 @@
+From e3f377e0d2d333e090231a572ce20f6c4eb7dd59 Mon Sep 17 00:00:00 2001
+From: hakusai <hakusai@mail2Why.com>
+Date: Thu, 30 May 2013 08:45:42 +0900
+Subject: [PATCH] =?UTF-8?q?=E6=99=82=E9=96=93=E5=91=A8=E3=82=8A=E3=82=92?=
+ =?UTF-8?q?=E4=BB=BB=E6=84=8F=E3=81=AE=E3=82=BF=E3=82=A4=E3=83=A0=E3=82=BE?=
+ =?UTF-8?q?=E3=83=BC=E3=83=B3=E3=81=A7=E3=81=AF=E3=81=AA=E3=81=8FUTC/Local?=
+ =?UTF-8?q?=E3=81=A0=E3=81=91=E3=81=AB=E3=81=97=E3=81=9F?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ CaveTubeClient/CavetubeClient.cs |  4 +--
+ CaveTubeClient/JavaScriptTime.cs | 61 +++++++++++++---------------------------
+ 2 files changed, 22 insertions(+), 43 deletions(-)
+ rewrite CaveTubeClient/JavaScriptTime.cs (79%)
+
+diff --git a/CaveTubeClient/CavetubeClient.cs b/CaveTubeClient/CavetubeClient.cs
+index a7412af..eec5347 100644
+--- a/CaveTubeClient/CavetubeClient.cs
++++ b/CaveTubeClient/CavetubeClient.cs
+@@ -709,7 +709,7 @@
+ 			this.Author = json.IsDefined("author") ? json.author : String.Empty;
+ 			this.Listener = json.IsDefined("listener") ? (Int32)json.listener : 0;
+ 			this.PageView = json.IsDefined("viewer") ? (Int32)json.viewer : 0;
+-			this.StartTime = json.IsDefined("start_time") && json.start_time != null ? JavaScriptTime.ToDateTime(json.start_time, TimeZoneKind.Japan) : null;
++			this.StartTime = json.IsDefined("start_time") && json.start_time != null ? JavaScriptTime.ToDateTime(json.start_time, DateTimeKind.Local) : null;
+ 		}
+ 
+ 		public override bool Equals(object obj) {
+@@ -758,7 +758,7 @@
+ 			this.IsAuth = json.IsDefined("auth") ? json.auth : false;
+ 			this.IsBan = json.IsDefined("is_ban") ? json.is_ban : false;
+ 			this.IsHide = json.IsDefined("is_hide") ? json.is_hide : false;
+-			this.PostTime = json.IsDefined("time") ? JavaScriptTime.ToDateTime(json.time, TimeZoneKind.Japan) : new DateTime();
++			this.PostTime = json.IsDefined("time") ? JavaScriptTime.ToDateTime(json.time, DateTimeKind.Local) : new DateTime();
+ 		}
+ 
+ 		public override bool Equals(object obj) {
+diff --git a/CaveTubeClient/JavaScriptTime.cs b/CaveTubeClient/JavaScriptTime.cs
+dissimilarity index 79%
+index 37ddd56..5cadd75 100644
+--- a/CaveTubeClient/JavaScriptTime.cs
++++ b/CaveTubeClient/JavaScriptTime.cs
+@@ -1,41 +1,20 @@
+-﻿namespace CaveTube.CaveTubeClient {
+-
+-	using System;
+-	using System.Collections.Generic;
+-
+-	internal sealed class JavaScriptTime {
+-		private readonly static DateTime UnixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+-		private readonly static IDictionary<TimeZoneKind, String> TimeZoneKindDictionary = new Dictionary<TimeZoneKind, String> {
+-			{ TimeZoneKind.Utc, "UTC" },
+-			{ TimeZoneKind.Japan, "Tokyo Standard Time"},
+-		};
+-
+-		public static Double ToDouble(DateTime dateTime) {
+-			return ToDouble(dateTime, TimeZoneKind.Utc);
+-		}
+-
+-		public static Double ToDouble(DateTime dateTime, TimeZoneKind timezoneKind) {
+-			dateTime = dateTime.AddMilliseconds(-1 * dateTime.Millisecond);
+-			var timezoneInfo = TimeZoneInfo.FindSystemTimeZoneById(TimeZoneKindDictionary[timezoneKind]);
+-			var target = dateTime.AddTicks(-1 * timezoneInfo.BaseUtcOffset.Ticks);
+-			var timespan = new TimeSpan(target.Ticks - UnixEpoch.Ticks);
+-			return timespan.TotalMilliseconds;
+-		}
+-
+-		public static DateTime ToDateTime(Double javaScriptTime) {
+-			return ToDateTime(javaScriptTime, TimeZoneKind.Utc);
+-		}
+-
+-		public static DateTime ToDateTime(Double javaScriptTime, TimeZoneKind timezoneKind) {
+-			var timezoneInfo = TimeZoneInfo.FindSystemTimeZoneById(TimeZoneKindDictionary[timezoneKind]);
+-			var inputDateTime = UnixEpoch.AddMilliseconds(javaScriptTime);
+-			var convertDateTime = inputDateTime.AddTicks(timezoneInfo.BaseUtcOffset.Ticks);
+-			return convertDateTime;
+-		}
+-	}
+-
+-	public enum TimeZoneKind {
+-		Utc,
+-		Japan,
+-	}
+-}
+\ No newline at end of file
++﻿namespace CaveTube.CaveTubeClient {
++
++	using System;
++	using System.Collections.Generic;
++
++	internal sealed class JavaScriptTime {
++		private readonly static DateTime UnixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
++
++		public static DateTime ToDateTime(Double javaScriptTime) {
++			return ToDateTime(javaScriptTime, DateTimeKind.Utc);
++		}
++
++		public static DateTime ToDateTime(Double javaScriptTime, DateTimeKind kind) {
++			var time = UnixEpoch.AddMilliseconds(javaScriptTime);
++            if (kind == DateTimeKind.Local)
++                time = time.ToLocalTime();
++            return time;
++		}
++	}
++}
+\ No newline at end of file
+-- 
+1.8.1.msysgit.1
+

@@ -10,7 +10,7 @@ MITライセンスについてはlicense.txtをご覧ください。
 公開させてもらっています。これ以上くどくど説明するほど有益なものではありません。
 
 ■ビルドについて
-Visual Studio 2012 Express Desktopを使っています。
+Visual Studio 2012 Express Desktopを使っています(*1)。
 基本はHakusai.slnをダブルクリックしてビルドするだけですが、
 最初は参照しているライブラリを各自ダウンロードして参照設定しないといけません。
 
@@ -71,3 +71,7 @@ https://code.google.com/p/sandcastle-help-file-builder-japanese-help-file-pack/
 
 Hakusai.shfbprojをダブルクリックし、Documentation>Build Projectで、
 Helpディレクトリに生成されます。
+
+(*1)実はLinux上のMonoでも動くようにしています(Ubuntu 12.04を使ってます)
+ただし現状では一部動作に支障があったため、CavetubeClientライブラリにパッチを当てて回避しています。
+パッチ自体はpatchesディレクトリに格納しています。
